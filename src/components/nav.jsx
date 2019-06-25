@@ -15,22 +15,22 @@ return (
       </div>
       <ul className="menu-nav">
         <li className="menu-item">
-          <Link to={process.env.PUBLIC_URL + '/'} className="nav-link" onClick={props.animations}>
+          <Link to="/" className="nav-link" onClick={props.animations}>
             Home
           </Link>
         </li>
         <li className="menu-item current">
-          <Link to={process.env.PUBLIC_URL + '/about'} className="nav-link" onClick={props.animations}>
+          <Link to="/about" className="nav-link" onClick={props.animations}>
             About Me
           </Link>
         </li>
         <li className="menu-item">
-          <Link to={process.env.PUBLIC_URL + '/portfolio'} className="nav-link" onClick={props.animations}>
+          <Link to="/portfolio" className="nav-link" onClick={props.animations}>
             Work
           </Link>
         </li>
         <li className="menu-item">
-          <Link to={process.env.PUBLIC_URL + '/contact'} className="nav-link" onClick={props.animations}>
+          <Link to="/contact" className="nav-link" onClick={props.animations}>
             Contact me
           </Link>
         </li>

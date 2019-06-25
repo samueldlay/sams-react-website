@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "474c82e052e82113198ace04074aeb0a",
+    "revision": "cdfb7fd2854b066fc2edf04c7d220bff",
     "url": "/sams-react-website/index.html"
   },
   {
-    "revision": "ffb634f0aa1bd3cd29f2",
+    "revision": "b6c0606b59cc04d2ac23",
     "url": "/sams-react-website/static/css/main.988df658.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sams-react-website/static/js/2.adc410ca.chunk.js"
   },
   {
-    "revision": "ffb634f0aa1bd3cd29f2",
-    "url": "/sams-react-website/static/js/main.af329e85.chunk.js"
+    "revision": "b6c0606b59cc04d2ac23",
+    "url": "/sams-react-website/static/js/main.b495ef33.chunk.js"
   },
   {
     "revision": "9a62481edf0c7e0eb80a",

@@ -66,14 +66,14 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename={'/sams-react-website'}>
+      <Router>
         <React.Fragment>
           <Nav animations={this.animations} />
           <Switch>
-            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
-            <Route path={process.env.PUBLIC_URL + '/about'} component={About} />
-            <Route path={process.env.PUBLIC_URL + '/portfolio'} component={Portfolio} />
-            <Route path={process.env.PUBLIC_URL + '/contact'} component={Contact} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/portfolio" component={Portfolio} />
+            <Route path="/contact" component={Contact} />
             <Route component={Home} />
           </Switch>
         </React.Fragment>

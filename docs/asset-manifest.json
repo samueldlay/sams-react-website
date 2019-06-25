@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sams-react-website/static/css/main.988df658.chunk.css",
-    "main.js": "/sams-react-website/static/js/main.b495ef33.chunk.js",
-    "main.js.map": "/sams-react-website/static/js/main.b495ef33.chunk.js.map",
-    "runtime~main.js": "/sams-react-website/static/js/runtime~main.5ceafabd.js",
-    "runtime~main.js.map": "/sams-react-website/static/js/runtime~main.5ceafabd.js.map",
-    "static/js/2.adc410ca.chunk.js": "/sams-react-website/static/js/2.adc410ca.chunk.js",
-    "static/js/2.adc410ca.chunk.js.map": "/sams-react-website/static/js/2.adc410ca.chunk.js.map",
-    "index.html": "/sams-react-website/index.html",
-    "precache-manifest.7decb1dc9bd86edbd85fc1de72eaaf87.js": "/sams-react-website/precache-manifest.7decb1dc9bd86edbd85fc1de72eaaf87.js",
-    "service-worker.js": "/sams-react-website/service-worker.js",
-    "static/css/main.988df658.chunk.css.map": "/sams-react-website/static/css/main.988df658.chunk.css.map"
+    "main.css": "/static/css/main.988df658.chunk.css",
+    "main.js": "/static/js/main.b495ef33.chunk.js",
+    "main.js.map": "/static/js/main.b495ef33.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.adc410ca.chunk.js": "/static/js/2.adc410ca.chunk.js",
+    "static/js/2.adc410ca.chunk.js.map": "/static/js/2.adc410ca.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.89fa0e79ec99121e0ff25fbd2872fe3e.js": "/precache-manifest.89fa0e79ec99121e0ff25fbd2872fe3e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.988df658.chunk.css.map": "/static/css/main.988df658.chunk.css.map"
   }
 }

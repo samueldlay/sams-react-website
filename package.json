@@ -2,7 +2,6 @@
   "name": "react-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://samueldlay.github.io/sams-react-website",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

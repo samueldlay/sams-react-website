@@ -5,7 +5,7 @@ import Home from './components/home';
 import About from './components/about';
 import Portfolio from './components/portfolio';
 import Contact from './components/contact';
-import { MemoryRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { MemoryRouter as Router, Route, Switch } from "react-router-dom";
 import getUserData from './githubapi';
 
 class App extends Component {

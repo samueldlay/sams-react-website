@@ -73,6 +73,7 @@
       color: #eccf28; }
   .menu .nav-link {
     display: inline-block;
+    cursor: pointer;
     position: relative;
     font-family: 'Oswald', sans-serif;
     font-size: 30px;

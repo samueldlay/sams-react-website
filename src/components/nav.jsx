@@ -1,7 +1,7 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
+import React from 'react';
 
 export default function Nav (props) {
+  const {state} = props;
 return (
 <header>
     <div className="menu-btn" onClick={props.animations}>
@@ -15,24 +15,24 @@ return (
       </div>
       <ul className="menu-nav">
         <li className="menu-item">
-          <Link to="/" className="nav-link" onClick={props.animations}>
+          <p className="nav-link" onClick={e => props.animations(e)} style={state.homeActive ? {color: '#eccf28'} : null}>
             Home
-          </Link>
+          </p>
         </li>
         <li className="menu-item current">
-          <Link to="/about" className="nav-link" onClick={props.animations}>
+          <p className="nav-link" onClick={e => props.animations(e)} style={state.aboutActive ? {color: '#eccf28'} : null}>
             About Me
-          </Link>
+          </p>
         </li>
         <li className="menu-item">
-          <Link to="/portfolio" className="nav-link" onClick={props.animations}>
+          <p className="nav-link" onClick={e => props.animations(e)} style={state.workActive ? {color: '#eccf28'} : null}>
             Work
-          </Link>
+          </p>
         </li>
         <li className="menu-item">
-          <Link to="/contact" className="nav-link" onClick={props.animations}>
+          <p className="nav-link" onClick={e => props.animations(e)} style={state.contactActive ? {color: '#eccf28'} : null}>
             Contact me
-          </Link>
+          </p>
         </li>
       </ul>
     </nav>

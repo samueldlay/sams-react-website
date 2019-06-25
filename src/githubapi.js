@@ -1,6 +1,6 @@
-const id = 'YOUR_CLIENT_ID';
-const sec = 'YOUR-SECRET-ID';
-const params = `?client_id=${id}&&client_secret=${sec}`;
+// const id = 'YOUR_CLIENT_ID';
+// const sec = 'YOUR-SECRET-ID';
+// const params = `?client_id=${id}&&client_secret=${sec}`;
 
 async function getProfile (username) {
   const profile = await fetch(`https://api.github.com/users/samueldlay`);

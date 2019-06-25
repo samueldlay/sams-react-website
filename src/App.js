@@ -5,19 +5,57 @@ import Home from './components/home';
 import About from './components/about';
 import Portfolio from './components/portfolio';
 import Contact from './components/contact';
-import { MemoryRouter as Router, Route, Switch } from "react-router-dom";
 import getUserData from './githubapi';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      component: () => < Home />,
+      homeActive: true,
+      aboutActive: false,
+      workActive: false,
+      contactActive: false,
       displayMenu: null
     }
     this.animations = this.animations.bind(this);
   }
 
-  animations() {
+  animations(e) {
+    console.log(e.target.textContent);
+    if (e.target.textContent === '{Home}') {
+      this.setState({
+        component: () => < Home />,
+      homeActive: true,
+      })
+    }
+    if (e.target.textContent === '{About Me}') {
+      this.setState({
+        component: () => < About />,
+      homeActive: false,
+      aboutActive: true,
+      workActive: false,
+      contactActive: false,
+      })
+    }
+    if (e.target.textContent === '{Work}') {
+      this.setState({
+        component: () => < Portfolio />,
+      homeActive: false,
+      aboutActive: false,
+      workActive: true,
+      contactActive: false,
+      })
+    }
+    if (e.target.textContent === '{Contact me}') {
+      this.setState({
+        component: () => < Contact />,
+      homeActive: false,
+      aboutActive: false,
+      workActive: false,
+      contactActive: true,
+      })
+    }
     const menuButton = document.querySelector('.menu-btn');
     const menu = document.querySelector('.menu');
     const menuNav = document.querySelector('.menu-nav');
@@ -66,18 +104,11 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <React.Fragment>
-          <Nav animations={this.animations} />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/portfolio" component={Portfolio} />
-            <Route path="/contact" component={Contact} />
-            <Route component={Home} />
-          </Switch>
-        </React.Fragment>
-      </Router>
+      
+      <React.Fragment>
+        <Nav animations={this.animations} state={this.state}/>
+        {this.state.component()}
+      </React.Fragment>
     );
   }
 }

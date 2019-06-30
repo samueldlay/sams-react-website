@@ -15,24 +15,24 @@ return (
       </div>
       <ul className="menu-nav">
         <li className="menu-item">
-          <p className="nav-link" onClick={e => props.animations(e)} style={state.homeActive ? {color: '#eccf28'} : null}>
+          <a className="nav-link" onClick={e => props.animations(e)} style={state.homeActive ? {color: '#eccf28'} : null}>
             Home
-          </p>
+          </a>
         </li>
-        <li className="menu-item current">
-          <p className="nav-link" onClick={e => props.animations(e)} style={state.aboutActive ? {color: '#eccf28'} : null}>
+        <li className="menu-item">
+          <a className="nav-link" onClick={e => props.animations(e)} style={state.aboutActive ? {color: '#eccf28'} : null}>
             About Me
-          </p>
+          </a>
         </li>
         <li className="menu-item">
-          <p className="nav-link" onClick={e => props.animations(e)} style={state.workActive ? {color: '#eccf28'} : null}>
+          <a className="nav-link" onClick={e => props.animations(e)} style={state.workActive ? {color: '#eccf28'} : null}>
             Work
-          </p>
+          </a>
         </li>
         <li className="menu-item">
-          <p className="nav-link" onClick={e => props.animations(e)} style={state.contactActive ? {color: '#eccf28'} : null}>
+          <a className="nav-link" onClick={e => props.animations(e)} style={state.contactActive ? {color: '#eccf28'} : null}>
             Contact me
-          </p>
+          </a>
         </li>
       </ul>
     </nav>

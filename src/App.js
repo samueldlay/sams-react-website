@@ -5,7 +5,8 @@ import Home from './components/home';
 import About from './components/about';
 import Portfolio from './components/portfolio';
 import Contact from './components/contact';
-import getUserData from './githubapi';
+// import getUserData from './githubapi';
+// import Loading from './components/loading';
 
 class App extends Component {
   constructor(props) {
@@ -27,6 +28,9 @@ class App extends Component {
       this.setState({
         component: () => < Home />,
       homeActive: true,
+      aboutActive: false,
+      workActive: false,
+      contactActive: false,
       })
     }
     if (e.target.textContent === '{About Me}') {
@@ -39,13 +43,7 @@ class App extends Component {
       })
     }
     if (e.target.textContent === '{Work}') {
-      this.setState({
-        component: () => < Portfolio />,
-      homeActive: false,
-      aboutActive: false,
-      workActive: true,
-      contactActive: false,
-      })
+      this.getUserData(e.target.textContent);
     }
     if (e.target.textContent === '{Contact me}') {
       this.setState({
@@ -94,20 +92,34 @@ class App extends Component {
 
   }
 
-  async getUserData() {
-    console.log(await getUserData());
+  getUserData(e) {
+    console.log(this.state);
+     
+    // const data = await getUserData();
+    this.setState({
+      component: () => < Portfolio />,
+    homeActive: false,
+    aboutActive: false,
+    workActive: true,
+    contactActive: false,
+    })
   }
 
   componentDidMount() {
-    this.getUserData();
+    // this.getUserData();
+    // console.log('test');
   }
 
   render() {
     return (
       
       <React.Fragment>
-        <Nav animations={this.animations} state={this.state}/>
-        {this.state.component()}
+        
+          <div className='layer'>
+            <Nav animations={this.animations} state={this.state}/>
+            {this.state.component()}
+          </div>
+        
       </React.Fragment>
     );
   }

@@ -13,24 +13,10 @@ export default function About () {
        {/* <img src="img/prof-pic2.jpg" alt="me" className="about-image"> */}
         <div className="bio">
             <h3 className="text-secondary">My Story</h3>
-            <p>On June 2, 1989, my mother gave birth to me without my permission.</p>
+            <p>My initial exposure to programming began when I was still pursuing a degree in electrical engineering, taking a course in C, and another course that utilized MATLAB. I have been programming with JavaScript as my primary language for a little over a year, mainly creating projects intended to improve my understanding of the language and its rapidly evolving built-in library. I have numerous projects that are still in development/polishing phase, but my portfolio is available upon request. Below is a list of the most valuable skills that I’ve learned that reflect the current trend of modern web-development/programming paradigms.
+</p>
         </div>
 
-      <div className="job job1">
-          <h3>Job 1</h3>
-          <h6>Position</h6>
-          <p>Coming soonish...</p>
-      </div>
-      <div className="job job2">
-        <h3>Job 2</h3>
-        <h6>Position2</h6>
-        <p>Coming soonish...</p>
-    </div> 
-    <div className="job job3">
-        <h3>Job 3</h3>
-        <h6>Position 3</h6>
-        <p>Coming soonish...</p>
-    </div>   
     </div>
   </main>
     )

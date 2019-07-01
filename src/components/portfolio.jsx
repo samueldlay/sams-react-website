@@ -30,7 +30,7 @@ export default class Portfolio extends React.Component {
              {/* {!this.state.data && <Loading />} */}
         <h2>My Portfolio</h2>
         {/* <img src="https://avatars0.githubusercontent.com/u/22435185?v=4" alt="My avatar"/> */}
-        <pre className='userData'>{!this.state.data ? 'LOADING' : JSON.stringify(this.state.data, null, 4)}</pre>
+        <p className='bio'>{!this.state.data ? 'LOADING' : JSON.stringify(this.state.data, null, 4)}</p>
         </div>
         )
     }

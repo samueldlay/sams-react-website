@@ -12,14 +12,14 @@ export default function Home (props) {
     <div className="icons">
 
       <a href="#!">
-        <i className="fab fa-github fa-2x"></i>
+        <i className="fab fa-github fa-10x"></i>
       </a>
-      <a href="#!">
+      {/* <a href="#!">
         <i className="fab fa-linkedin fa-2x"></i>
       </a>
       <a href="#!">
         <i className="fas fa-envelope fa-2x"></i>
-      </a>
+      </a> */}
     </div>
   </main>
     )

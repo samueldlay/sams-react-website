@@ -117,10 +117,10 @@ class App extends Component {
 		return (
 			<React.Fragment>
 				<div className="layer">
-					<Nav
+					{/* <Nav
 						animations={this.animations}
 						state={this.state}
-					/>
+					/> */}
 					{this.state.component()}
 				</div>
 			</React.Fragment>

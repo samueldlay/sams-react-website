@@ -11,7 +11,7 @@ export default function Home (props) {
     </h2>
     <div className="icons">
 
-      <a href="#!">
+      <a href="https://github.com/samueldlay?tab=repositories">
         <i className="fab fa-github fa-10x"></i>
       </a>
       {/* <a href="#!">

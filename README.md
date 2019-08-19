@@ -1,1 +1,1 @@
-Github Page for My Website Refactored with React
+A very minimalistic website.

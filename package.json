@@ -1,6 +1,6 @@
 {
-  "name": "txtrx",
-  "private": true,
+  "name": "sams_website",
+  "private": false,
   "version": "0.1.0",
   "type": "module",
   "scripts": {

@@ -1,10 +1,12 @@
 import "./App.css";
 import Heading from "./Heading";
 import Menu from "./Menu"
+import Portfolio from "./Portfolio";
 
 export function App() {
   return (
-    <div className="flex flex-col content-end items-end gap-4">
+    <div className="prose">
+      {/* <Portfolio /> */}
       <Menu />
       <Heading />
     </div>

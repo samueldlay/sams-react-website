@@ -1,7 +1,5 @@
 export default function Heading() {
   return (
-    <div className="">
-      <h1>Welcome</h1>
-    </div>
+    <h1 className="text-8xl text-red-200">Welcome</h1>
   );
 }

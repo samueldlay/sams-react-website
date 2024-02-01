@@ -8,10 +8,8 @@ import { NextUIProvider } from "@nextui-org/react";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <NextUIProvider>
-      <div className="flex justify-center">
-        <App />
-      </div>
+    <NextUIProvider className="prose">
+      <App />
     </NextUIProvider>
   </StrictMode>,
 );

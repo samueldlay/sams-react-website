@@ -19,13 +19,19 @@ const images = [
     src: "https://cms.londonzoo.org/sites/default/files/styles/responsive/public/720/840/1/2022-11/Asim-at-London-Zoo.jpg",
     repoUrl: ""
   },
+  {
+    src: "https://cms.londonzoo.org/sites/default/files/styles/responsive/public/720/840/1/2022-11/Asim-at-London-Zoo.jpg",
+    repoUrl: ""
+  },
+  {
+    src: "https://cms.londonzoo.org/sites/default/files/styles/responsive/public/720/840/1/2022-11/Asim-at-London-Zoo.jpg",
+    repoUrl: ""
+  },
 ]
 
 export function App() {
   return (
-    <div className="prose">
-      {/* <Portfolio /> */}
-      {/* <Carousel images={images} /> */}
+    <div className="prose justify-center">
       <Heading />
       <Menu />
       <Images images={images} />

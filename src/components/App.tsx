@@ -1,9 +1,7 @@
 import "./App.css";
-import Carousel from "./Carousel";
 import Heading from "./Heading";
 import Menu from "./Menu"
 import Images from "./Images";
-import Portfolio from "./Portfolio";
 
 const images = [
   {

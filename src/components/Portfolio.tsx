@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, CardHeader, Image } from "@nextui-org/react"
+import { Button, Image } from "@nextui-org/react"
 import { useEffect, useState } from "react";
 
 const cards = [
@@ -25,11 +25,11 @@ const cards = [
 
 export default function Portfolio() {
   const beginningIndex = 0;
-  const nextStep = 1;
-  const previousStep = -1;
+  // const nextStep = 1;
+  // const previousStep = -1;
   const steps = cards.length;
   const [currentStep, setCurrentStep] = useState(beginningIndex);
-  const [stepCount, setStepCount] = useState(0);
+  // const [stepCount, setStepCount] = useState(0);
 
   const handleStepThreshold = (step: number) => {
     const stepThreshold =

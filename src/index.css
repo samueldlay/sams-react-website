@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 :root {
-  background-color: #242424;
   display: flex;
   justify-content: center;
+}
+
+.dark {
+  background-color: #242424;
+  color: #fff;
 }

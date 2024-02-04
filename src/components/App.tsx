@@ -2,6 +2,7 @@ import "./App.css";
 import Heading from "./Heading";
 import Menu from "./Menu"
 import Images from "./Images";
+import { useEffect, useState } from "react";
 
 const images = [
   {
@@ -23,13 +24,24 @@ const images = [
   },
   {
     src: "https://cms.londonzoo.org/sites/default/files/styles/responsive/public/720/840/1/2022-11/Asim-at-London-Zoo.jpg",
-    repoUrl: ""
+    repoUrl: "Test"
   },
 ]
 
 export function App() {
+  const [darkTheme, setDarkTheme] = useState(false);
+
+  useEffect(() => {
+    if (darkTheme) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkTheme]);
+
   return (
-    <div className="prose justify-center">
+    <div>
+      <h1 onClick={() => setDarkTheme(!darkTheme)}>Set theme</h1>
       <Heading />
       <Menu />
       <Images images={images} />

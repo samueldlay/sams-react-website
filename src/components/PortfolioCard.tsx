@@ -1,15 +1,76 @@
-type PortfolioCardProps = { title: string, description: string, image?: string, repoUrl?: string }
+import { motion, useMotionTemplate, useMotionValue, useTransform, useScroll } from "framer-motion";
+import { MouseEvent, useRef } from "react";
+import Image from "./Image";
 
-export default function PortfolioCard({ title = "Test", description = "Test description", image = "", repoUrl = "" }: PortfolioCardProps) {
+type PortfolioCardProps = {
+  darkMode: boolean;
+  title?: string;
+  description?: string;
+  image?: string;
+  repoUrl?: string;
+};
+
+export default function Demo({ darkMode }: PortfolioCardProps) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const ref = useRef<HTMLDivElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['0 1', '1.33 1']
+  })
+  function handleMouseMove({
+    currentTarget,
+    clientX,
+    clientY,
+  }: MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1])
   return (
-    <div className="w-screen rounded-md relative p-4 sm:p-2 sm:transform
-     sm:hover:translate-x-1 sm:hover:-translate-y-1 sm:w-1/3 sm:h-72 sm:hover:border sm:hover:border-slate-400 sm:bg-opacity-100 hover:translate-x-0
-      hover:-translate-y-0 bg-slate-500 border border-slate-400 transition duration-100 
-       hover:bg-opacity-40 shadow-md hover:shadow-xl overflow-hidden h-64 items-center">
-      <h2 className="text-2xl h-8 font-bold transform hover:text-slate-800 transition-all duration-200">{title}
-        <span className="">↗</span>
-      </h2>
-      <p className="">{description}</p>
-    </div>
+    <motion.div
+      className="sm:transform
+      sm:hover:translate-x-1 sm:hover:-translate-y-1 transition duration-100 group relative w-screen sm:w-1/3 rounded-xl border border-slate-400/10 bg-slate-200 dark:bg-slate-800 px-8 py-16 shadow-2xl"
+      onMouseMove={handleMouseMove}
+      ref={ref}
+      style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+      }}
+    >
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              400px circle at ${mouseX}px ${mouseY}px,
+              ${darkMode ? "rgba(46, 94, 105, 0.25)" : "rgba(248, 248, 248, 0.55)"},
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      <div>
+        <h3 className="text-base font-semibold leading-7 dark:text-teal-500 text-pink-500">
+          Byline
+        </h3>
+        <div className="">
+          <Image alt="temp" src={"https://cms.londonzoo.org/sites/default/files/styles/responsive/public/720/840/1/2022-11/Asim-at-London-Zoo.jpg"} />
+        </div>
+        {/* <div className="mt-2 flex items-center gap-x-2">
+          <span className="text-5xl font-bold tracking-tight text-slate-100">
+            Description
+          </span>
+        </div> */}
+        <p className="mt-6 text-base leading-7 text-slate-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit, facilis
+          illum eum ullam nostrum atque quam.
+        </p>
+      </div>
+    </motion.div>
   );
 }

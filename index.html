@@ -4,27 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + React + TS</title>
   <script>
-    console.log('Hello Vite!')
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    console.log(`#     # ####### #     # ######  #     # 
+#     # #     # #  #  # #     #  #   #  
+#     # #     # #  #  # #     #   # #   
+####### #     # #  #  # #     #    #    
+#     # #     # #  #  # #     #    #    
+#     # #     # #  #  # #     #    #    
+#     # #######  ## ##  ######     #    🤠`)
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      // localStorage.theme = 'dark';
       document.documentElement.classList.add('dark');
-    } else {
-      // localStorage.theme = 'light';
+    }
+    else {
       document.documentElement.classList.remove('dark');
     }
-
-    // // Whenever the user explicitly chooses light mode
-    // localStorage.theme = 'light'
-
-    // // Whenever the user explicitly chooses dark mode
-    // localStorage.theme = 'dark'
-
-    // // Whenever the user explicitly chooses to respect the OS preference
-    // localStorage.removeItem('theme')
   </script>
 </head>
 

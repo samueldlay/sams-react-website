@@ -4,10 +4,11 @@
 
 :root {
   display: flex;
-  justify-content: center;
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
 
 .dark {
-  background-color: #242424;
-  color: #fff;
+  background-color: rgb(17 24 39);;
+  color: rgb(241 245 249);
 }

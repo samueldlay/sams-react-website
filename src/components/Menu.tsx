@@ -1,7 +1,19 @@
 export default function Menu() {
-  const menuItems = ["Home", "About", "Work", "Contact"]
+  const menuItems = ["Home", "About", "Work", "Contact"];
+  const handleTheme = () => {
+    if (localStorage.getItem("theme") === "light") {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+    }
+    else {
+      localStorage.removeItem("theme");
+      localStorage.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
+    }
+  }
+
   return (
-    <div className="dark:bg-slate-300 flex fixed top-0 inset-12 gap-4 bg-inherit h-6 justify-center rounded-md">
+    <div className="dark:bg-opacity-50 dark:bg-inherit bg-slate-800 bg-opacity-50 flex fixed top-1 inset-12 gap-4 h-6 justify-center rounded-md">
       {menuItems.map((item, index) => {
         return (
           <button className="text-white opacity-100" key={item}>
@@ -9,6 +21,8 @@ export default function Menu() {
           </button>
         )
       })}
+      <button onClick={handleTheme} className="text-white opacity-100">
+        Theme</button>
     </div>
   )
 }

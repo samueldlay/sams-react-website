@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.0.1",
+    "@mdx-js/rollup": "^3.0.1",
     "clsx": "^2.1.0",
     "framer-motion": "^10.18.0",
     "localforage": "^1.10.0",

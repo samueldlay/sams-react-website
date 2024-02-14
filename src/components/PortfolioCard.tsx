@@ -1,24 +1,31 @@
-import { motion, useMotionTemplate, useMotionValue, useTransform, useScroll } from "framer-motion";
-import { MouseEvent, useRef } from "react";
+import { motion, useMotionTemplate, useMotionValue, useTransform, useScroll, useInView } from "framer-motion";
+import { MouseEvent, useEffect, useRef } from "react";
 import Image from "./Image";
 
 type PortfolioCardProps = {
   darkMode: boolean;
+  className?: string;
   title?: string;
   description?: string;
   image?: string;
   repoUrl?: string;
 };
 
-export default function Demo({ darkMode, title, description, image, repoUrl }: PortfolioCardProps) {
+export default function PortfolioCard({ darkMode, title, description, className, image, repoUrl }: PortfolioCardProps) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    console.log({ isInView, title });
+  }, [isInView, title]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0 1', '1.33 1']
-  })
+    offset: ["start end", "end end"]
+  });
+
   function handleMouseMove({
     currentTarget,
     clientX,
@@ -29,42 +36,37 @@ export default function Demo({ darkMode, title, description, image, repoUrl }: P
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1])
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   return (
     <motion.div
-      className="sm:transform
-      sm:hover:translate-x-1 sm:hover:-translate-y-1 transition duration-100 group relative w-screen sm:w-1/3 rounded-xl border border-slate-400/10 bg-slate-200 dark:bg-slate-800 px-8 py-16 shadow-2xl"
+      className={"sm:transform sm:hover:translate-x-1 sm:hover:-translate-y-1 transition duration-100 group relative w-full rounded-md border border-slate-400/10 bg-gray-200 dark:bg-gray-800 px-8 py-16 shadow-2xl " + className}
       onMouseMove={handleMouseMove}
       ref={ref}
       style={{
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
+      transition={{ ease: "easeOut", duration: .5, delay: 0.2 }}
     >
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(
-              400px circle at ${mouseX}px ${mouseY}px,
-              ${darkMode ? "rgba(46, 94, 105, 0.25)" : "rgba(248, 248, 248, 0.55)"},
+              500px circle at ${mouseX}px ${mouseY}px,
+              ${darkMode ? "rgba(81, 81, 81, 0.25)" : "rgba(248, 248, 248, 0.55)"},
               transparent 80%
             )
           `,
         }}
       />
       <div>
-        <h3 className="text-base font-semibold leading-7 dark:text-teal-500 text-pink-500">
+        <h3 className="text-2xl font-semibold leading-7 text-pink-500">
           {title}
         </h3>
-        <div className="">
+        {/* <div className="">
           <Image alt="temp" src={image!} />
-        </div>
-        {/* <div className="mt-2 flex items-center gap-x-2">
-          <span className="text-5xl font-bold tracking-tight text-slate-100">
-            Description
-          </span>
         </div> */}
         <p className="mt-6 text-base leading-7 text-slate-300">
           {description}

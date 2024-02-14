@@ -18,7 +18,7 @@ export default function Menu({ setDarkMode }: MenuProps) {
   }
 
   return (
-    <div className="dark:bg-opacity-50 z-50 dark:bg-inherit bg-slate-800 bg-opacity-50 flex fixed top-1 inset-12 gap-4 h-6 justify-center rounded-md">
+    <div className="z-50 flex fixed top-1 inset-12 gap-4 h-6 justify-center rounded-md">
       {menuItems.map((item, index) => {
         return (
           <button className="text-white opacity-100" key={item}>

@@ -1,13 +1,15 @@
-type DescriptionImageProps = { src: string; alt: string }
+import { motion } from "framer-motion";
 
-export default function DescriptionImage({ src, alt }: DescriptionImageProps) {
+type DescriptionImageProps = { src: string; alt: string; className?: string; }
+
+export default function DescriptionImage({ src, alt, className }: DescriptionImageProps) {
   return (
-    <div className="w-screen border-2 border-teal-800 rounded-md relative overflow-hidden h-72 sm:w-1/3 sm:h-24">
+    <motion.div key={src} initial={{ x: 0 }} whileHover={{ x: 12, boxShadow: "10px" }} className={`w-full self-center rounded-md relative overflow-hidden ${className} mt-5`}>
       <img
         src={src}
         className={`object-cover w-full h-full`}
         alt={alt}
       />
-    </div>
+    </motion.div>
   );
 }

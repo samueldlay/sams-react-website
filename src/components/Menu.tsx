@@ -21,12 +21,12 @@ export default function Menu({ setDarkMode }: MenuProps) {
     <div className="z-50 flex fixed top-1 inset-12 gap-4 h-6 justify-center rounded-md">
       {menuItems.map((item, index) => {
         return (
-          <button className="text-white opacity-100" key={item}>
+          <button className="dark:text-gray-200 text-gray-800" key={item}>
             {item}
           </button>
         )
       })}
-      <button onClick={handleTheme} className="text-white opacity-100">
+      <button onClick={handleTheme} className="dark:text-white text-gray-800">
         Theme</button>
     </div>
   )

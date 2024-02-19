@@ -10,6 +10,7 @@ import { CardList } from "./Cards";
 import { StickyScroll } from "./RevealScroll";
 import TestCard from "./TestCard";
 import Blog, { posts } from "./Blog";
+import ImageWithText from "./ImageWithText";
 
 const images = [
   {
@@ -65,42 +66,31 @@ const content = [
   },
 ];
 
-export const ThemeContext = createContext('dark');
+export const ThemeContext = createContext(false);
 
 export function App() {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
-  const localDarkMode = localStorage.getItem("darkMode");
-
-  // const handleDarkMode = () => {
-
-  // }
-
-  useEffect(() => {
-    if (localStorage.getItem("darkMode") === "true") {
-      setDarkMode(true);
-    }
-  }, [localDarkMode]);
+  const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem("theme") === "dark");
 
   return (
-    <ThemeContext.Provider value={darkMode ? "dark" : "light"}>
-      <div
-        className=""
-      >
-        {/* <Heading />
-    <Scroll /> */}
+    <ThemeContext.Provider value={darkMode}>
+      <div className="sm:px-24 sm:py-12 dark:text-gray-200 text-gray-800">
         <Menu setDarkMode={setDarkMode} />
         {/* <StickyScroll content={content} /> */}
         {/* <LoremIpsum /> */}
         <TestCard />
-        {/* <Blog posts={posts} /> */}
-        {/* <PortfolioCard darkMode title="Test 1" description="Testing the description 1" />
+        {/* <StickyScroll content={content} /> */}
+        {/* <ImageWithText /> */}
+      </div>
+      {/* <Heading />
+    <Scroll /> */}
+      {/* <Blog posts={posts} /> */}
+      {/* <PortfolioCard darkMode title="Test 1" description="Testing the description 1" />
         <PortfolioCard darkMode title="Test 2" description="Testing the description 2" />
         <PortfolioCard darkMode title="Test 3" description="Testing the description 3" />
         <PortfolioCard darkMode title="Test 4" description="Testing the description 4" />
         <PortfolioCard darkMode title="Test 5" description="Testing the description 5" />
         <PortfolioCard darkMode title="Test 6" description="Testing the description 6" />
         <PortfolioCard darkMode title="Test 7" description="Testing the description 7" /> */}
-      </div>
     </ThemeContext.Provider>
   );
 }

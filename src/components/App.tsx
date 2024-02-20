@@ -73,7 +73,7 @@ export function App() {
 
   return (
     <ThemeContext.Provider value={darkMode}>
-      <div className="sm:px-24 sm:py-12 dark:text-gray-200 text-gray-800">
+      <div className="md:px-56 md:py-12 dark:text-gray-200 text-gray-800">
         <Menu setDarkMode={setDarkMode} />
         {/* <StickyScroll content={content} /> */}
         {/* <LoremIpsum /> */}

@@ -1,3 +1,5 @@
+import ThemeIcon from "./ThemeIcon";
+
 type MenuProps = {
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -26,8 +28,10 @@ export default function Menu({ setDarkMode }: MenuProps) {
           </button>
         )
       })}
-      <button onClick={handleTheme} className="dark:text-white text-gray-800">
-        Theme</button>
+      {/* <button onClick={handleTheme} className="dark:text-white text-gray-800">
+        Theme
+      </button> */}
+      <ThemeIcon handleThemeChange={handleTheme} />
     </div>
   )
 }

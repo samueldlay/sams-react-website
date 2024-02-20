@@ -37,8 +37,8 @@ export default function Demo({ darkMode, title, description, image, repoUrl }: P
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1])
   return (
     <div
-      className="sm:transform
-      sm:hover:translate-x-1 sm:hover:-translate-y-1 transition duration-100 group w-screen sm:h-100vh sm:w-1/3 rounded-xl border border-slate-400/10 bg-slate-200 dark:bg-slate-800 px-8 py-8 shadow-2xl sticky top-10 overflow-hidden"
+      className="md:transform
+      md:hover:translate-x-1 md:hover:-translate-y-1 transition duration-100 group w-screen md:h-100vh md:w-1/3 rounded-xl border border-slate-400/10 bg-slate-200 dark:bg-slate-800 px-8 py-8 shadow-2xl sticky top-10 overflow-hidden"
       onMouseMove={handleMouseMove}
     // ref={ref}
     // style={{

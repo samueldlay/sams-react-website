@@ -1,16 +1,8 @@
 import "./App.css";
-import Heading from "./Heading";
 import Menu from "./Menu"
 import { createContext, useEffect, useState } from "react";
-import PortfolioCard from "./PortfolioCard";
-import LoremIpsum from "./LorumIpsum";
-import Scroll from "./Scroll";
-import { motion, useScroll } from "framer-motion";
-import { CardList } from "./Cards";
-import { StickyScroll } from "./RevealScroll";
 import TestCard from "./TestCard";
-import Blog, { posts } from "./Blog";
-import ImageWithText from "./ImageWithText";
+import Badge from "./Badge";
 
 const images = [
   {
@@ -73,24 +65,20 @@ export function App() {
 
   return (
     <ThemeContext.Provider value={darkMode}>
-      <div className="md:px-56 md:py-12 dark:text-gray-200 text-gray-800">
+      <div className="flex flex-col md:px-24 lg:px-36 xl:px-72 md:py-12 dark:text-gray-200 text-gray-800">
         <Menu setDarkMode={setDarkMode} />
-        {/* <StickyScroll content={content} /> */}
-        {/* <LoremIpsum /> */}
+        {/* <Badge index={1}>Hello</Badge>
+        <Badge index={2}>Hello</Badge>
+        <Badge index={3}>Hello</Badge>
+        <Badge index={4}>Hello</Badge>
+        <Badge index={5}>Hello</Badge>
+        <Badge index={6}>Hello</Badge>
+        <Badge index={7}>Hello</Badge>
+        <Badge index={8}>Hello</Badge>
+        <Badge index={9}>Hello</Badge>
+        <Badge index={10}>Hello</Badge> */}
         <TestCard />
-        {/* <StickyScroll content={content} /> */}
-        {/* <ImageWithText /> */}
       </div>
-      {/* <Heading />
-    <Scroll /> */}
-      {/* <Blog posts={posts} /> */}
-      {/* <PortfolioCard darkMode title="Test 1" description="Testing the description 1" />
-        <PortfolioCard darkMode title="Test 2" description="Testing the description 2" />
-        <PortfolioCard darkMode title="Test 3" description="Testing the description 3" />
-        <PortfolioCard darkMode title="Test 4" description="Testing the description 4" />
-        <PortfolioCard darkMode title="Test 5" description="Testing the description 5" />
-        <PortfolioCard darkMode title="Test 6" description="Testing the description 6" />
-        <PortfolioCard darkMode title="Test 7" description="Testing the description 7" /> */}
     </ThemeContext.Provider>
   );
 }

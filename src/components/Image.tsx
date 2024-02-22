@@ -1,11 +1,12 @@
 import { motion, Variants } from "framer-motion";
+import { ReactNode } from "react";
 
-type DescriptionImageProps = { src: string; alt: string; parentClassName?: string; childClassName?: string; variants?: Variants };
+type DescriptionImageProps = { src: string; alt: string; parentClassName?: string; childClassName?: string; variants?: Variants; children?: ReactNode };
 
-export default function DescriptionImage({ src, alt, childClassName, parentClassName }: DescriptionImageProps) {
+export default function DescriptionImage({ src, alt, children, childClassName, parentClassName }: DescriptionImageProps) {
   return (
-    <div key={src} className={`w-full h-full self-center rounded-md relative overflow-hidden ${parentClassName} mt-5`}>
-      {/* <div className="absolute w-full h-1/3 hover:bg-black hover:opacity-50 blur-sm duration-200 z-10 bottom-0" /> */}
+    <div key={src} className={`w-full h-full self-center rounded-md relative overflow-hidden ${parentClassName}`}>
+      {children}
       <img
         src={src}
         className={`object-cover w-full h-full ${childClassName}`}

@@ -7,14 +7,18 @@ export default function Menu({ setDarkMode }: MenuProps) {
   const menuItems = ["Home", "About", "Work", "Contact"];
   const handleTheme = () => {
     if (localStorage.getItem("theme") === "light") {
+      console.log("Setting dark mode")
       localStorage.setItem("theme", "dark");
+      document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
       setDarkMode(true);
     }
     else {
+      console.log("Setting light mode")
       localStorage.removeItem("theme");
       localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
       setDarkMode(false);
     }
   }

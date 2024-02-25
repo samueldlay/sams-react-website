@@ -3,7 +3,10 @@ import { useRef, useState } from "react";
 import PortfolioCard from "./PortfolioCard";
 import useScreenWidth from "../hooks/useScreenWidth";
 import Image from "./Image";
+import HeroImage from "./HeroImage";
 import Badge from "./Badge";
+import Badges from "./Badges";
+import Button from "./Button";
 
 const cards = [{
   title: "Test 1",
@@ -37,7 +40,7 @@ const cards = [{
   title: "Test 5",
   image: "https://cdn.vox-cdn.com/thumbor/eomH7ai274c9V2CpR2QoanXfdUs=/0x194:1548x968/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/19539772/cats4.jpg",
   id: 5,
-  description: "Testing the description 5Testing the description 5Testing the description 5Testing the description 5Testing the description 5Testing the description 5Testing the description 5Testing the description 5Testing the description 5Testing the description 5Testing the description 5",
+  description: "Testing the description 5",
   post: "Lorem tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultr",
   skills: ["React", "TypeScript", "TailwindCSS", "Framer Motion"]
 }, {
@@ -59,8 +62,6 @@ const cards = [{
 
 export default function TestCard() {
   const ref = useRef(null);
-
-  const isInView = useInView(ref);
 
   const screenWidth = useScreenWidth();
 
@@ -96,27 +97,29 @@ export default function TestCard() {
         {cards.map((card, index) => {
           return (
             <div key={card.description + index} className={`w-full md:w-1/2 flex-col md:flex ${activeCard !== index && mouseActive ? "md:opacity-40 md:transition md:duration-200" : ""}`}>
-              <PortfolioCard onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} image={card.image} title={card.title} description={card.description} />
-              {
+              <PortfolioCard index={index} badges={card.skills} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} image={card.image} title={card.title} description={card.description} post={card.post} />
+              {screenWidth > 700 ?
                 index === activeCard ? <motion.div
                   key={cards[activeCard]?.id}
                   initial="hidden"
                   animate="animate"
                   variants={demoVariants}
-                  className="md:p-8 flex flex-col gap-8 md:fixed xl:right-72 lg:right-36 md:right-24 md:top-0 md:bottom-0 md:h-[90vh] md:overflow-y-scroll mt-8 md:w-1/3"
+                  className="md:p-8 flex flex-col gap-8 md:fixed 2xl:right-64 xl:right-56 lg:right-36 md:right-24 md:top-0 md:bottom-0 md:h-[90vh] md:overflow-y-scroll mt-8 md:w-1/3"
                 >
-                  <motion.h1 className={`text-xl font-normal dark:text-pink-700 text-pink-600`} variants={demoVariants}>{cards[activeCard]?.title}</motion.h1>
+                  <motion.h1 className={`text-2xl font-bold text-pink-500`} variants={demoVariants}>{cards[activeCard]?.title}</motion.h1>
                   <motion.p className="text-sm" variants={demoVariants}>{cards[activeCard]?.post} and {screenWidth}</motion.p>
                   {
                     screenWidth > 700 ? <motion.div className="w-full md:h-96 drop-shadow-md" variants={demoVariants}>
-                      <Image childClassName="md:hover:scale-125 md:hover:opacity-50 hover:bg-gray-900 duration-300 transition" parentClassName="border-4 border-gray-400 dark:border-gray-600" src={cards[activeCard]?.image} alt={cards[activeCard]?.title}><h1 className="absolute text-2xl top-1/2 right-1/2 z-10">Test</h1></Image>
-                    </motion.div> : null
+                      <HeroImage src={cards[activeCard]?.image} alt={cards[activeCard]?.title} />
+                    </motion.div> :
+                      <div>
+                        <Button onClick={() => console.log("CLicked")}>{`<Code/>`}</Button>
+                        <Button primary onClick={() => console.log("CLicked")}>Try it out!</Button>
+                      </div>
                   }
-                  <div className="flex flex-wrap gap-4 w-full">
-                    {card.skills.map((skill, index) => <Badge key={skill + index} index={index}>{skill}</Badge>)}
-                  </div>
+                  <Badges badges={card.skills} />
                 </motion.div> : null
-              }
+                : null}
             </div>
           )
         })}

@@ -7,6 +7,7 @@ import HeroImage from "./HeroImage";
 import Badge from "./Badge";
 import Badges from "./Badges";
 import Button from "./Button";
+import SplitText from "./SplitText";
 
 const cards = [{
   title: "Test 1",
@@ -104,10 +105,11 @@ export default function TestCard() {
                   initial="hidden"
                   animate="animate"
                   variants={demoVariants}
-                  className="md:p-8 flex flex-col gap-8 md:fixed 2xl:right-64 xl:right-56 lg:right-36 md:right-24 md:top-0 md:bottom-0 md:h-[90vh] md:overflow-y-scroll mt-8 md:w-1/3"
+                  className="md:p-8 flex flex-col gap-8 md:fixed 2xl:right-72 xl:right-56 lg:right-36 md:right-24 md:top-0 md:bottom-0 md:h-[90vh] md:overflow-y-scroll mt-8 md:w-1/3"
                 >
                   <motion.h1 className={`text-2xl font-bold text-pink-500`} variants={demoVariants}>{cards[activeCard]?.title}</motion.h1>
-                  <motion.p className="text-sm" variants={demoVariants}>{cards[activeCard]?.post} and {screenWidth}</motion.p>
+                  {/* <motion.p className="text-sm" variants={demoVariants}>{cards[activeCard]?.post}</motion.p> */}
+                  <SplitText text={cards[activeCard]?.post} />
                   {
                     screenWidth > 700 ? <motion.div className="w-full md:h-96 drop-shadow-md" variants={demoVariants}>
                       <HeroImage src={cards[activeCard]?.image} alt={cards[activeCard]?.title} />

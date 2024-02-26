@@ -95,7 +95,7 @@ export default function PortfolioCard({ badges, title, description, className, i
             null
         }
         <h3 className="text-2xl md:text-xl font-bold leading-7 text-pink-500 md:relative">
-          {title} and darkmode: {theme.toString()}
+          {title}
         </h3>
         <p className="text-normal text-pretty dark:text-gray-300 text-gray-800">
           {description}
@@ -110,7 +110,7 @@ export default function PortfolioCard({ badges, title, description, className, i
         <Button onClick={() => console.log("CLicked")}>{`<Code/>`}</Button>
         <Button primary onClick={() => console.log("CLicked")}>Try it out!</Button>
       </div> */}
-      {badges ? <Badges badges={badges} /> : null}
+      {/* {badges ? <Badges badges={badges} /> : null} */}
     </ motion.div>
   );
 }

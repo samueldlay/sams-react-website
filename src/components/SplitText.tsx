@@ -28,9 +28,11 @@ export default function SplitText({ className, text }: { className: string; text
 
   return (
     <div className="flex flex-wrap relative">
-      {text.split(" ").slice(0, 40).map((word, index) => (
-        <motion.p key={word + index} initial="hidden" whileInView={"inView"} variants={variants} custom={index} className={className}>{word}&nbsp;</motion.p>
-      ))}
+      <div className="flex flex-wrap gap-1">
+        {text.slice(0, 150).split(" ").map((word, index) => (
+          <motion.span key={word + index} initial="hidden" whileInView={"inView"} variants={variants} custom={index} className={className}>{word}</motion.span>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import useScreenWidth from "../hooks/useScreenWidth";
+import { Chip as NextChip } from "@nextui-org/react"
 
-export default function Badge({ children, index, key }: { children: string, index: number, key: string }) {
+export default function Chip({ children, index, key }: { children: string, index: number, key: string }) {
   const
     screenWidth = useScreenWidth();
   const variants = {
@@ -30,7 +31,7 @@ export default function Badge({ children, index, key }: { children: string, inde
   }
 
   return (
-    <motion.span
+    <motion.div
       key={key}
       initial="hidden"
       animate={screenWidth > 500 ? "visible" : ""}
@@ -38,6 +39,10 @@ export default function Badge({ children, index, key }: { children: string, inde
       whileHover={{ x: 5, rotate: 5 }}
       variants={variants}
       custom={index}
-      className="bg-pink-500 text-white text-xs text-center align-middle font-bold py-1 px-2 shadow-xl rounded-full">{children}</motion.span>
+      className="shadow-xl">
+      <NextChip size="sm" className="bg-pink-500 text-gray-200">
+        {children}</NextChip>
+    </motion.div>
+
   );
 }

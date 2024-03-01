@@ -3,7 +3,7 @@ import { MouseEvent, useContext, useEffect, useRef } from "react";
 import Image from "./Image";
 import HeroImage from "./HeroImage";
 import { ThemeContext } from "./App";
-import Badges from "./Badges";
+import Badges from "./Chips";
 import Button from "./Button";
 import SectionTitle from "./SectionHeader";
 import SplitText from "./SplitText";

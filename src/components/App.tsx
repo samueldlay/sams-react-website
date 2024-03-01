@@ -10,8 +10,8 @@ export function App() {
 
   return (
     <ThemeContext.Provider value={darkMode}>
-      <div className="flex flex-col md:px-24 lg:px-36 xl:px-72 md:py-12 dark:text-gray-200 text-gray-800">
-        <Menu setDarkMode={setDarkMode} />
+      <Menu setDarkMode={setDarkMode} />
+      <div className="flex flex-col md:px-24 mt-24 lg:px-36 xl:px-72 md:py-12 dark:text-gray-200 text-gray-800 p-[2rem]">
         <Main />
       </div>
     </ThemeContext.Provider>

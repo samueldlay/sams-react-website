@@ -1,4 +1,5 @@
 /** @type {import("tailwindcss").Config} */
+import { nextui } from "@nextui-org/react";
 
 export default {
   content: [
@@ -11,6 +12,7 @@ export default {
     extend: {},
   },
   plugins: [
+    nextui(),
     require('@tailwindcss/typography'),
   ],
 };

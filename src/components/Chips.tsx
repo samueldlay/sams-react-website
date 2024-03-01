@@ -1,4 +1,4 @@
-import Badge from './Badge';
+import Badge from './Chip';
 
 export default function Badges({ badges, className }: { badges: string[]; className?: string }) {
   return (

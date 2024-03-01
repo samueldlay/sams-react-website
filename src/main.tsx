@@ -5,10 +5,13 @@ import { createRoot } from "react-dom/client";
 import { App } from "./components/App.tsx";
 // import { default as App } from "./components/Test.mdx";
 import "./index.css";
+import { NextUIProvider } from "@nextui-org/react";
 
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <NextUIProvider>
+      <App />
+    </NextUIProvider>
   </StrictMode>,
 );

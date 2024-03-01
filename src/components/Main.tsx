@@ -4,8 +4,8 @@ import PortfolioCard from "./PortfolioCard";
 import useScreenWidth from "../hooks/useScreenWidth";
 import Image from "./Image";
 import HeroImage from "./HeroImage";
-import Badge from "./Badge";
-import Badges from "./Badges";
+import Badge from "./Chip";
+import Badges from "./Chips";
 import Button from "./Button";
 import SplitText from "./SplitText";
 
